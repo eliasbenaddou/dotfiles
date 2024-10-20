@@ -1,0 +1,11 @@
+[[language]]
+name = "python"
+language-servers = ["pylsp"]
+auto-format = true
+
+[language-server.pylsp.config.pylsp]
+plugins.ruff.enabled = true
+plugins.ruff.format = ["I"]
+
+[language.formatter]
+command = "ruff format"

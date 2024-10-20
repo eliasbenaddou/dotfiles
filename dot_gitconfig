@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = master
+[user]
+	name = Elias Benaddou Idrissi
+	email = e.benaddou@hey.com
+[safe]
+	directory = /Users/eliasbenaddouidrissi/Desktop
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true

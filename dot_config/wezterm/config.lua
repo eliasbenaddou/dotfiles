@@ -26,7 +26,7 @@ config = {
   background = {
     {
       source = {
-        File = "/Users/" .. os.getenv("USER") .. "/.config/wezterm/background.jpg",
+        File = "/Users/" .. os.getenv("USER") .. "/Documents/x/utilities/photos/monterey-bg.jpg",
       },
       hsb = {
         hue = 1.0,

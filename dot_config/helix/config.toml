@@ -4,7 +4,7 @@ theme = "term16_dark"
 line-number = "relative"
 mouse = false
 shell  = ["zsh", "-c"]
-bufferline = "multiple"
+bufferline = "always"
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]

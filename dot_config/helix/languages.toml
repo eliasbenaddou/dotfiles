@@ -1,9 +1,8 @@
 [[language]]
 name = "python"
 language-id = "python"
-roots = ["pyproject.toml", "poetry.lock", ".git", ".venv/"]
-language-servers = ["ruff", "basedpyright"]
-# formatter = { command = "ruff", args = ["format", "-" ] }
+roots = ["pyproject.toml", "poetry.lock", ".git"]
+language-servers = ["basedpyright", "ruff"]
 formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
 file-types = ["py", "ipynb"]
 comment-token = "#"

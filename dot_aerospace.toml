@@ -111,7 +111,6 @@ alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-c = 'workspace C'
 alt-r = 'workspace R'
-alt-t = 'workspace T'
 alt-w = 'workspace W'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -124,7 +123,6 @@ alt-shift-f = 'fullscreen'
 
 alt-shift-c = 'move-node-to-workspace C'
 alt-shift-r = 'move-node-to-workspace R'
-alt-shift-t = 'move-node-to-workspace T'
 alt-shift-w = 'move-node-to-workspace W'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -149,6 +147,6 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
-# [[on-window-detected]]
-# if.app-id = 'com.googlecode.iterm2'
-# run = 'move-node-to-workspace T'
+[[on-window-detected]]
+if.app-id = 'com.amazon.workspaces'
+run = 'move-node-to-workspace 3'

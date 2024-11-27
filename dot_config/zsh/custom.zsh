@@ -5,11 +5,6 @@ export EDITOR="hx"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
 
-# Initialise Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # Case insensitive autosuggestions
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit

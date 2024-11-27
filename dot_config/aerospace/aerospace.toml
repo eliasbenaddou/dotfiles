@@ -1,0 +1,104 @@
+automatically-unhide-macos-hidden-apps = true
+
+after-login-command = []
+
+after-startup-command = ['exec-and-forget sketchybar borders']
+
+start-at-login = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+
+default-root-container-layout = 'tiles'
+
+default-root-container-orientation = 'auto'
+
+key-mapping.preset = 'qwerty'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
+on-focus-changed = [
+  'exec-and-forget sketchybar --trigger aerospace_focus_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+  'move-mouse window-lazy-center'
+]
+
+[gaps]
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       10
+outer.bottom =     10
+outer.top =        50
+outer.right      = 10
+
+[mode.main.binding]
+
+ctrl-alt-cmd-slash = 'layout tiles horizontal vertical'
+ctrl-alt-cmd-comma = 'layout accordion horizontal vertical'
+
+ctrl-alt-cmd-a = 'focus left'
+ctrl-alt-cmd-s = 'focus down'
+ctrl-alt-cmd-d = 'focus up'
+ctrl-alt-cmd-f = 'focus right'
+
+ctrl-alt-cmd-shift-a = 'move left'
+ctrl-alt-cmd-shift-s = 'move down'
+ctrl-alt-cmd-shift-d = 'move up'
+ctrl-alt-cmd-shift-f = 'move right'
+
+ctrl-alt-cmd-minus = 'resize smart -50'
+ctrl-alt-cmd-equal = 'resize smart +50'
+
+ctrl-alt-cmd-1 = 'workspace home'
+ctrl-alt-cmd-2 = 'workspace web'
+ctrl-alt-cmd-3 = 'workspace code'
+ctrl-alt-cmd-4 = 'workspace work'
+ctrl-alt-cmd-5 = 'workspace music'
+ctrl-alt-cmd-6 = 'workspace chat'
+
+ctrl-alt-cmd-shift-1 = 'move-node-to-workspace home'
+ctrl-alt-cmd-shift-2 = 'move-node-to-workspace web'
+ctrl-alt-cmd-shift-3 = 'move-node-to-workspace code'
+ctrl-alt-cmd-shift-4 = 'move-node-to-workspace work'
+ctrl-alt-cmd-shift-5 = 'move-node-to-workspace music'
+ctrl-alt-cmd-shift-6 = 'move-node-to-workspace chat'
+
+ctrl-alt-cmd-m = 'fullscreen'
+
+ctrl-alt-cmd-tab = 'workspace-back-and-forth'
+# ctrl-alt-cmd-tab = 'move-workspace-to-monitor --wrap-around next'
+
+ctrl-alt-cmd-semicolon = 'mode service'
+
+
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main'] # reset layout
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+backspace = ['close-all-windows-but-current', 'mode main']
+
+ctrl-alt-cmd-a = ['join-with left', 'mode main']
+ctrl-alt-cmd-s = ['join-with down', 'mode main']
+ctrl-alt-cmd-d = ['join-with up', 'mode main']
+ctrl-alt-cmd-f = ['join-with right', 'mode main']
+
+[[on-window-detected]]
+if.app-id = 'com.amazon.workspaces'
+run = 'move-node-to-workspace work'
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace home'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace music'
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace chat'

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+options=(
+    style=round
+    width=10.0
+    hidpi=off
+    active_color=#0xFFFFFFFF # Solid black for active border
+    # inactive_color=0xc02c2e34 # No inactive colour 
+    background_color=0x002c2e34 # Fully transparent background
+)
+
+borders "${options[@]}"

@@ -86,16 +86,69 @@ alias gqc='quick_commit'
 alias gqcp='quick_commit push'
 
 # --- Helix Integration ---
-poetry_run_hx() {
+poetry_uv_run_hx() {
   if command -v poetry >/dev/null 2>&1 && [ -f "poetry.lock" ]; then
     poetry run hx "$@"
+  elif command -v uv >/dev/null 2>&1 && [ -f "uv.lock" ]; then
+    uv run hx "$@"
   else
     hx "$@"
   fi
 }
-alias h='poetry_run_hx'
+alias h='poetry_uv_run_hx'
+alias prp='poetry run python'
 
-# --- Folder Shortcuts ---
+# # Helix Search
+# hxs() {
+#     RG_PREFIX="rg -i --files-with-matches"
+#     local files
+#     files="$(
+#         FZF_DEFAULT_COMMAND_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+#         fzf --multi 3 --print0 --sort --preview="[[ ! -z {} ]] && rg --pretty --ignore-case --context 5 {q} {}" \
+#         --phony -i -q "$1" \
+#         --bind "change:reload:$RG_PREFIX {q}" \
+#         --preview-window="70%:wrap" \
+#         --bind 'ctrl-a:select-all'
+#     )"
+# 	[[ "$files" ]] && hx --vsplit $(echo $files | tr \\0 " ")
+# }
+
+
+
+# # Helix Search with Immediate Filter
+# hxs() {
+#     RG_PREFIX="rg -i --files-with-matches"
+#     local files
+#     files="$(
+#         FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+#             fzf --multi 3 --print0 --sort --preview="[[ ! -z {} ]] && rg --pretty --ignore-case --context 5 {q} {}" \
+#                 --phony -i -q "$1" \
+#                 --bind "enter:execute(reload:$RG_PREFIX {q})+clear-query" \
+#                 --preview-window="70%:wrap" \
+#                 --bind 'ctrl-a:select-all' \
+#                 --bind "change:reload:$RG_PREFIX {q}" \
+#     )"
+#     [[ "$files" ]] && hx --vsplit $(echo $files | tr \\0 " ")
+# }
+
+
+
+# Helix Search with Immediate Filtering Fix
+hxs() {
+    RG_PREFIX="rg -i --files-with-matches"
+    local files
+    files="$(
+        FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+            fzf --multi --print0 --sort --preview="[[ -n {} ]] && rg --pretty --ignore-case --context 5 {q} {}" \
+                --phony -i -q "$1" \
+                --bind "change:reload($RG_PREFIX {q})" \
+                --preview-window="70%:wrap" \
+                --bind 'ctrl-a:select-all'
+    )"
+    [[ "$files" ]] && hx --vsplit $(echo "$files" | tr \\0 " ")
+}
+
+#--- Folder Shortcuts ---
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
 

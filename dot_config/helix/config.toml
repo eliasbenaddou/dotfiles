@@ -6,8 +6,14 @@ mouse = false
 shell  = ["zsh", "-c"]
 bufferline = "always"
 
+# [editor.whitespace]
+# render = "all"
+
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-d = ["half_page_down", "goto_window_center"]
+C-u = ["half_page_up", "goto_window_center"]
 
 [editor.cursor-shape]
 insert = "bar"
@@ -16,3 +22,6 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+# [keys.normal.space.space]
+# f = "file_browser"

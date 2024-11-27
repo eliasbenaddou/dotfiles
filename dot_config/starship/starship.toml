@@ -28,7 +28,7 @@ truncate_to_repo = false
 'Downloads' = ' '
 'Music' = ' '
 'Pictures' = ' '
-# Add for second brain icon and dir to obsidian
+"Elias's Second Brain" = '🧠'
 
 [git_branch]
 style = 'fg:green'

@@ -23,29 +23,26 @@ config = {
     top = 0,
     bottom = 0,
   },
-  background = {
-    {
-      source = {
-        File = "/Users/" .. os.getenv("USER") .. "/Documents/x/utilities/photos/monterey-bg.jpg",
-      },
-      hsb = {
-        hue = 1.0,
-        saturation = 1.02,
-        brightness = 0.25,
-      },
-      -- attachment = { Parallax = 0.3 },
-      -- width = "100%",
-      -- height = "100%",
-    },
-    {
-      source = {
-        Color = "#282c35",
-      },
-      width = "100%",
-      height = "100%",
-      opacity = 0.80,
-    },
-  },
+  -- background = {
+  --   {
+  --     source = {
+  --       File = "/Users/" .. os.getenv("USER") .. "/Documents/x/utilities/photos/monterey-bg.jpg",
+  --     },
+  --     hsb = {
+  --       hue = 1.0,
+  --       saturation = 1.02,
+  --       brightness = 0.25,
+  --     },
+  --   },
+  --   {
+  --     source = {
+  --       Color = "#282c35",
+  --     },
+  --     width = "100%",
+  --     height = "100%",
+  --     opacity = 0.80,
+  --   },
+  -- },
   -- from: https://akos.ma/blog/adopting-wezterm/
   hyperlink_rules = {
     -- Matches: a URL in parens: (URL)

@@ -6,10 +6,6 @@ wezterm.on("gui-startup", function()
   window:gui_window():maximize()
 end)
 
--- wezterm.on("window-resized", function(window, pane)
--- 	readjust_font_size(window, pane)
--- end)
-
 -- Readjust font size on window resize to get rid of the padding at the bottom
 function readjust_font_size(window, pane)
   local window_dims = window:get_dimensions()

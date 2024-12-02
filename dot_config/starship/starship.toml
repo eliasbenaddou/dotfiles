@@ -14,7 +14,7 @@ $line_break\
 $character"""
 
 add_newline = true
-palette = "nord"
+palette = "onedark"
 
 [directory]
 style = 'bold fg:dark_blue'

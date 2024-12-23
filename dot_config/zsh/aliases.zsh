@@ -10,23 +10,18 @@ alias e='exit'
 alias g='git'
 alias ga='git add'
 alias gaa='git add .'
-alias gf='git fetch'
+alias gf='git fetch --all'
 alias gs='git status'
-alias gss='git status -s'
 alias gco='git checkout'
 alias gcofzf='git branch | fzf | xargs git checkout' # Select branch with fzf
 
 # --- Git Basics: Commit Commands ---
 alias gc='git commit -v'
 alias gcmnv='git commit --no-verify -m'
-alias gcanenv='git commit --amend --no-edit --no-verify'
 
 # --- Git Basics: Pull and Push Commands ---
-alias glo='git pull origin'
 alias gp='git pull'
 alias gpp='git push'
-alias gpo='git push origin'
-alias ggpush='git push origin $(current_branch)'
 
 # --- Git Basics: Stash Commands ---
 alias gsh='git stash'
@@ -35,13 +30,7 @@ alias gstp='git stash pop'
 
 # --- Git Branching ---
 alias gb='git branch'
-alias gbr='git branch -r'
 alias gcob='git checkout -b'
-alias gm='git merge'
-
-# --- Git Tagging ---
-alias gtd='git tag --delete'
-alias gtdr='git tag --delete origin'
 
 # --- Git Diff and Restore ---
 alias gd='git diff'
@@ -98,41 +87,6 @@ poetry_uv_run_hx() {
 alias h='poetry_uv_run_hx'
 alias prp='poetry run python'
 
-# # Helix Search
-# hxs() {
-#     RG_PREFIX="rg -i --files-with-matches"
-#     local files
-#     files="$(
-#         FZF_DEFAULT_COMMAND_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
-#         fzf --multi 3 --print0 --sort --preview="[[ ! -z {} ]] && rg --pretty --ignore-case --context 5 {q} {}" \
-#         --phony -i -q "$1" \
-#         --bind "change:reload:$RG_PREFIX {q}" \
-#         --preview-window="70%:wrap" \
-#         --bind 'ctrl-a:select-all'
-#     )"
-# 	[[ "$files" ]] && hx --vsplit $(echo $files | tr \\0 " ")
-# }
-
-
-
-# # Helix Search with Immediate Filter
-# hxs() {
-#     RG_PREFIX="rg -i --files-with-matches"
-#     local files
-#     files="$(
-#         FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
-#             fzf --multi 3 --print0 --sort --preview="[[ ! -z {} ]] && rg --pretty --ignore-case --context 5 {q} {}" \
-#                 --phony -i -q "$1" \
-#                 --bind "enter:execute(reload:$RG_PREFIX {q})+clear-query" \
-#                 --preview-window="70%:wrap" \
-#                 --bind 'ctrl-a:select-all' \
-#                 --bind "change:reload:$RG_PREFIX {q}" \
-#     )"
-#     [[ "$files" ]] && hx --vsplit $(echo $files | tr \\0 " ")
-# }
-
-
-
 # Helix Search with Immediate Filtering Fix
 hxs() {
     RG_PREFIX="rg -i --files-with-matches"
@@ -151,9 +105,6 @@ hxs() {
 #--- Folder Shortcuts ---
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
-
-# --- Ranger File Manager ---
-alias r=". ranger"
 
 # --- Better ls ---
 alias ls="eza --all --icons=always"

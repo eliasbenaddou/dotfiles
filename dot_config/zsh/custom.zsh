@@ -5,6 +5,9 @@ export EDITOR="hx"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
 
+# uv shell completion
+eval "$(uv generate-shell-completion zsh)"
+
 # Case insensitive autosuggestions
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit

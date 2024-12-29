@@ -13,7 +13,7 @@ alias gaa='git add .'
 alias gf='git fetch --all'
 alias gs='git status'
 alias gco='git checkout'
-alias gcofzf='git branch | fzf | xargs git checkout' # Select branch with fzf
+alias gcofzf='git branch | fzf | xargs git checkout'
 
 # --- Git Basics: Commit Commands ---
 alias gc='git commit -v'
@@ -34,8 +34,8 @@ alias gcob='git checkout -b'
 
 # --- Git Diff and Restore ---
 alias gd='git diff'
-alias grfzf='git diff --name-only | fzf -m --print0 | xargs -0 -o -t git restore' # Git restore with fzf
-alias grsfzf='git diff --name-only | fzf -m --print0 | xargs -0 -o -t git restore --staged' # Git restore --staged with fzf
+alias grfzf='git diff --name-only | fzf -m --print0 | xargs -0 -o -t git restore'
+alias grsfzf='git diff --name-only | fzf -m --print0 | xargs -0 -o -t git restore --staged'
 
 # --- Git Remote ---
 alias gre='git remote'
@@ -45,8 +45,8 @@ alias gres='git remote show'
 alias gl='git log --graph --max-count=5 --decorate --pretty="oneline"'
 
 # --- Git Fuzzy Finder Integrations ---
-alias gafzf='git ls-files -m -o --exclude-standard | grep -v "__pycache__" | fzf -m --print0 | xargs -0 -o -t git add' # Git add with fzf
-alias grmfzf='git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git rm' # Git rm with fzf
+alias gafzf='git ls-files -m -o --exclude-standard | grep -v "__pycache__" | fzf -m --print0 | xargs -0 -o -t git add'
+alias grmfzf='git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git rm'
 
 # --- Git Rebase & Update ---
 alias gup='git fetch && git rebase'
@@ -55,7 +55,6 @@ alias gup='git fetch && git rebase'
 gcm() {
   git commit -m "$*"
 }
-
 quick_commit() {
   local branch_name ticket_id commit_message push_flag
   branch_name=$(git branch --show-current)
@@ -64,13 +63,12 @@ quick_commit() {
   push_flag=$1
 
   if [[ "$push_flag" == "push" ]]; then
-    commit_message="$ticket_id: ${*:2}" # take all positional parameters starting from the second one
+    commit_message="$ticket_id: ${*:2}"
     git commit --no-verify -m "$commit_message" && git push
   else
     git commit --no-verify -m "$commit_message"
   fi
 }
-
 alias gqc='quick_commit'
 alias gqcp='quick_commit push'
 
@@ -93,7 +91,8 @@ hxs() {
     local files
     files="$(
         FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
-            fzf --multi --print0 --sort --preview="[[ -n {} ]] && rg --pretty --ignore-case --context 5 {q} {}" \
+            fzf --multi --print0 --sort \
+                --preview="[[ -n {} ]] && rg --pretty --ignore-case --context 5 {q} {}" \
                 --phony -i -q "$1" \
                 --bind "change:reload($RG_PREFIX {q})" \
                 --preview-window="70%:wrap" \
@@ -102,7 +101,7 @@ hxs() {
     [[ "$files" ]] && hx --vsplit $(echo "$files" | tr \\0 " ")
 }
 
-#--- Folder Shortcuts ---
+# --- Folder Shortcuts ---
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
 

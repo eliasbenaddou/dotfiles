@@ -1,5 +1,23 @@
-# Custom zsh
-[ -f "$HOME/.config/zsh/custom.zsh" ] && source "$HOME/.config/zsh/custom.zsh"
+# 1. Environment (interactive-only variables)
+[ -f "$HOME/.config/zsh/environment.zsh" ] && source "$HOME/.config/zsh/environment.zsh"
 
-# Aliases
+# 2. Completions
+[ -f "$HOME/.config/zsh/completions.zsh" ] && source "$HOME/.config/zsh/completions.zsh"
+
+# 3. Syntax Highlighting
+[ -f "$HOME/.config/zsh/syntax-highlighting.zsh" ] && source "$HOME/.config/zsh/syntax-highlighting.zsh"
+
+# 4. Autosuggestions
+[ -f "$HOME/.config/zsh/autosuggestions.zsh" ] && source "$HOME/.config/zsh/autosuggestions.zsh"
+
+# 5. Prompt (Starship)
+[ -f "$HOME/.config/zsh/prompt.zsh" ] && source "$HOME/.config/zsh/prompt.zsh"
+
+# 6. fzf
+[ -f "$HOME/.config/zsh/fzf.zsh" ] && source "$HOME/.config/zsh/fzf.zsh"
+
+# 7. History
+[ -f "$HOME/.config/zsh/history.zsh" ] && source "$HOME/.config/zsh/history.zsh"
+
+# 8. Aliases
 [ -f "$HOME/.config/zsh/aliases.zsh" ] && source "$HOME/.config/zsh/aliases.zsh"

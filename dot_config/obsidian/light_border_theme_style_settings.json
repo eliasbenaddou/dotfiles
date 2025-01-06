@@ -244,12 +244,10 @@
   "Editor@@callout-style-select": "callout-style-2",
   "Editor@@editor-grid-background-pattren": false,
   "Editor@@seamless-embeds": false,
-  "Editor@@bold-color@@dark": "#A87A2D",
   "Appearance-dark@@theme-dark-style-select": "theme-dark-background-default",
   "Appearance-dark@@mod-root-split-background-select-dark": "mod-root-split-background-primary-dark",
   "Editor@@link-color@@dark": "#A87A2D",
   "Editor@@link-external-color@@dark": "#A87A2D",
-  "Editor@@italic-color@@dark": "#A87A2D",
   "Editor@@link-color-hover@@dark": "#A87A2D",
   "Editor@@link-external-color-hover@@dark": "#A87A2D",
   "Appearance-light@@card-layout-open-light": true,
@@ -275,8 +273,6 @@
   "Editor@@inline-title-color-select": "inline-title-color-customized",
   "Editor@@text-align-justify": false,
   "Editor@@p-spacing-br": false,
-  "Editor@@bold-color@@light": "#A87A2D",
-  "Editor@@italic-color@@light": "#A87A2D",
   "Editor@@link-color@@light": "#A87A2D",
   "Editor@@link-color-hover@@light": "#A87A2D",
   "Editor@@link-unresolved-color@@light": "#A87A2D",
@@ -287,5 +283,7 @@
   "Editor@@checkbox-color@@light": "#A87A2D",
   "Editor@@checkbox-border-color@@light": "#A87A2D",
   "Editor@@checkbox-border-color-hover@@light": "#A87A2D",
-  "Editor@@tag-color@@dark": "#A87A2D"
+  "Editor@@tag-color@@dark": "#A87A2D",
+  "Editor@@bold-color@@light": "#000000",
+  "Editor@@italic-color@@light": "#000000"
 }

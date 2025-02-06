@@ -6,9 +6,6 @@ mouse = false
 shell  = ["zsh", "-c"]
 bufferline = "always"
 
-# [editor.whitespace]
-# render = "all"
-
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
@@ -22,6 +19,3 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
-
-# [keys.normal.space.space]
-# f = "file_browser"

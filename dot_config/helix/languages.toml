@@ -3,11 +3,15 @@ name = "python"
 language-id = "python"
 roots = ["pyproject.toml", "poetry.lock", ".git", ".venv/"]
 language-servers = ["ruff", "basedpyright"]
+# language-servers = ["ruff", "basedpyright", "gpt"]
 formatter = { command = "uvx", args = ["sh", "-c", "ruff check --fix - | ruff format -"] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
 auto-format = true
+
+# [language-server.gpt]
+# command = "helix-gpt"
 
 [language-server.basedpyright]
 command = "uv"

@@ -104,6 +104,10 @@ if.app-id = 'com.hey.app.desktop'
 run = 'move-node-to-workspace email'
 
 [[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace code'
+
+[[on-window-detected]]
 if.app-id = 'com.amazon.workspaces'
 run = 'move-node-to-workspace work'
 

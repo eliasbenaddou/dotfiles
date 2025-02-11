@@ -6,6 +6,7 @@ mouse = false
 shell  = ["zsh", "-c"]
 bufferline = "always"
 jump-label-alphabet = "fjdklavmceiruwotybns;"
+end-of-line-diagnostics = "hint"
 
 [editor.soft-wrap]
 enable = true
@@ -27,6 +28,12 @@ mode.insert = "INSERT"
 mode.normal = "NORMAL"
 mode.select = "SELECT"
 separator = " │ "
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.lsp]
+display-inlay-hints = true
 
 [keys.normal]
 # Navigation

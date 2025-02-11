@@ -56,17 +56,19 @@ ctrl-alt-cmd-equal = 'resize smart +50'
 
 ctrl-alt-cmd-1 = 'workspace home'
 ctrl-alt-cmd-2 = 'workspace web'
-ctrl-alt-cmd-3 = 'workspace code'
-ctrl-alt-cmd-4 = 'workspace work'
-ctrl-alt-cmd-5 = 'workspace music'
-ctrl-alt-cmd-6 = 'workspace chat'
+ctrl-alt-cmd-3 = 'workspace email'
+ctrl-alt-cmd-4 = 'workspace code'
+ctrl-alt-cmd-5 = 'workspace work'
+ctrl-alt-cmd-6 = 'workspace music'
+ctrl-alt-cmd-7 = 'workspace chat'
 
 ctrl-alt-cmd-shift-1 = 'move-node-to-workspace home'
 ctrl-alt-cmd-shift-2 = 'move-node-to-workspace web'
-ctrl-alt-cmd-shift-3 = 'move-node-to-workspace code'
-ctrl-alt-cmd-shift-4 = 'move-node-to-workspace work'
-ctrl-alt-cmd-shift-5 = 'move-node-to-workspace music'
-ctrl-alt-cmd-shift-6 = 'move-node-to-workspace chat'
+ctrl-alt-cmd-shift-3 = 'move-node-to-workspace email'
+ctrl-alt-cmd-shift-4 = 'move-node-to-workspace code'
+ctrl-alt-cmd-shift-5 = 'move-node-to-workspace work'
+ctrl-alt-cmd-shift-6 = 'move-node-to-workspace music'
+ctrl-alt-cmd-shift-7 = 'move-node-to-workspace chat'
 
 ctrl-alt-cmd-m = 'fullscreen'
 
@@ -96,9 +98,14 @@ if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace home'
 
 [[on-window-detected]]
+if.app-id = 'com.hey.app.desktop'
+run = 'move-node-to-workspace email'
+
+[[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace music'
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
 run = 'move-node-to-workspace chat'
+

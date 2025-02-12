@@ -57,7 +57,7 @@ X = "extend_line_above"
 S = "@ /%p <C-r>% %n "  # Open string search on current buffer
 
 # Commenting & Code Manipulation
-C-C = ["toggle_comments", "move_line_down"]
+C-c = ["toggle_comments", "move_line_down"]
 
 # Escape & Selection Handling
 esc = ["collapse_selection", "keep_primary_selection"]

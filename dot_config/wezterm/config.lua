@@ -5,138 +5,72 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config = {
-  default_cursor_style = "SteadyBar",
-  automatically_reload_config = true,
-  window_close_confirmation = "NeverPrompt",
-  adjust_window_size_when_changing_font_size = false,
-  window_decorations = "RESIZE",
-  check_for_updates = false,
-  use_fancy_tab_bar = false,
-  tab_bar_at_bottom = false,
-  font_size = 15,
-  font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
-  enable_tab_bar = false,
-  window_padding = {
-    left = 3,
-    right = 3,
-    top = 0,
-    bottom = 0,
-  },
-  -- background = {
-  --   {
-  --     source = {
-  --       File = "/Users/" .. os.getenv("USER") .. "/Documents/x/utilities/photos/monterey-bg.jpg",
-  --     },
-  --     hsb = {
-  --       hue = 1.0,
-  --       saturation = 1.02,
-  --       brightness = 0.25,
-  --     },
-  --   },
-  --   {
-  --     source = {
-  --       Color = "#282c35",
-  --     },
-  --     width = "100%",
-  --     height = "100%",
-  --     opacity = 0.80,
-  --   },
-  -- },
-  -- from: https://akos.ma/blog/adopting-wezterm/
-  hyperlink_rules = {
-    -- Matches: a URL in parens: (URL)
-    {
-      regex = "\\((\\w+://\\S+)\\)",
-      format = "$1",
-      highlight = 1,
-    },
-    -- Matches: a URL in brackets: [URL]
-    {
-      regex = "\\[(\\w+://\\S+)\\]",
-      format = "$1",
-      highlight = 1,
-    },
-    -- Matches: a URL in curly braces: {URL}
-    {
-      regex = "\\{(\\w+://\\S+)\\}",
-      format = "$1",
-      highlight = 1,
-    },
-    -- Matches: a URL in angle brackets: <URL>
-    {
-      regex = "<(\\w+://\\S+)>",
-      format = "$1",
-      highlight = 1,
-    },
-    -- Then handle URLs not wrapped in brackets
-    {
-      -- Before
-      --regex = '\\b\\w+://\\S+[)/a-zA-Z0-9-]+',
-      --format = '$0',
-      -- After
-      regex = "[^(]\\b(\\w+://\\S+[)/a-zA-Z0-9-]+)",
-      format = "$1",
-      highlight = 1,
-    },
-    -- implicit mailto link
-    {
-      regex = "\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b",
-      format = "mailto:$0",
-    },
-  },
-  keys = {
-    -- Sends ESC + b and ESC + f sequence, which is used
-    -- for telling your shell to jump back/forward.
-    {
-      -- When the left arrow is pressed
-      key = "LeftArrow",
-      -- With the "Option" key modifier held down
-      mods = "OPT",
-      -- Perform this action, in this case - sending ESC + B
-      -- to the terminal
-      action = wezterm.action.SendString "\x1bb",
-    },
-    {
-      key = "RightArrow",
-      mods = "OPT",
-      action = wezterm.action.SendString "\x1bf",
-    },
-    {
-      key = "v",
-      mods = "LEADER",
-      action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
-    },
-    {
-      key = "s",
-      mods = "LEADER",
-      action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" },
-    },
-    {
-        -- I like to use vim direction keybindings, but feel free to replace
-        -- with directional arrows instead.
-        key = "j", -- or DownArrow
-        mods = "LEADER",
-        action = wezterm.action.ActivatePaneDirection("Down"),
-      },
-      {
-        key = "k", -- or UpArrow
-        mods = "LEADER",
-        action = wezterm.action.ActivatePaneDirection("Up"),
-      },
-      {
-        key = "h", -- or LeftArrow
-        mods = "LEADER",
-        action = wezterm.action.ActivatePaneDirection("Left"),
-      },
-      {
-        key = "l", -- or RightArrow
-        mods = "LEADER",
-        action = wezterm.action.ActivatePaneDirection("Right"),
-      },    
-  },
-  leader = {
-      key = "w", mods = "CTRL", timeout_milliseconds = 1000 
-    }
+local function resize_pane(key, direction)
+  return {
+    key = key,
+    action = wezterm.action.AdjustPaneSize { direction, 3 }
+  }
+end
+
+local function move_pane(key, direction)
+  return {
+    key = key,
+    mods = "LEADER",
+    action = wezterm.action.ActivatePaneDirection(direction),
+  }
+end
+
+config.default_cursor_style = "SteadyBar"
+config.automatically_reload_config = true
+config.window_close_confirmation = "NeverPrompt"
+config.adjust_window_size_when_changing_font_size = false
+config.window_decorations = "RESIZE"
+config.check_for_updates = false
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = false
+config.font_size = 15
+config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
+config.enable_tab_bar = false
+config.window_padding = { left = 3, right = 3, top = 0, bottom = 0 }
+
+config.hyperlink_rules = {
+  { regex = "\\((\\w+://\\S+)\\)", format = "$1", highlight = 1 },
+  { regex = "\\[(\\w+://\\S+)\\]", format = "$1", highlight = 1 },
+  { regex = "\\{(\\w+://\\S+)\\}", format = "$1", highlight = 1 },
+  { regex = "<(\\w+://\\S+)>", format = "$1", highlight = 1 },
+  { regex = "[^(]\\b(\\w+://\\S+[)/a-zA-Z0-9-]+)", format = "$1", highlight = 1 },
+  { regex = "\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b", format = "mailto:$0" },
 }
+
+config.keys = {
+  { key = "LeftArrow", mods = "OPT", action = wezterm.action.SendString "\x1bb" },
+  { key = "RightArrow", mods = "OPT", action = wezterm.action.SendString "\x1bf" },
+  { key = "v", mods = "LEADER", action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" } },
+  { key = "s", mods = "LEADER", action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" } },
+  move_pane("j", "Down"),
+  move_pane("k", "Up"),
+  move_pane("h", "Left"),
+  move_pane("l", "Right"),
+  {
+    key = "d",
+    mods = "LEADER",
+    action = wezterm.action.ActivateKeyTable {
+      name = "resize_panes",
+      one_shot = false,
+      timeout_milliseconds = 1000,
+    }
+  }
+}
+
+config.key_tables = {
+  resize_panes = {
+    resize_pane("j", "Down"),
+    resize_pane("k", "Up"),
+    resize_pane("h", "Left"),
+    resize_pane("l", "Right"),
+  }
+}
+
+config.leader = { key = "w", mods = "CTRL", timeout_milliseconds = 1000 }
+
 return config

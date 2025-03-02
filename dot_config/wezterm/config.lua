@@ -90,18 +90,53 @@ config = {
     -- for telling your shell to jump back/forward.
     {
       -- When the left arrow is pressed
-      key = 'LeftArrow',
+      key = "LeftArrow",
       -- With the "Option" key modifier held down
-      mods = 'OPT',
+      mods = "OPT",
       -- Perform this action, in this case - sending ESC + B
       -- to the terminal
-      action = wezterm.action.SendString '\x1bb',
+      action = wezterm.action.SendString "\x1bb",
     },
     {
-      key = 'RightArrow',
-      mods = 'OPT',
-      action = wezterm.action.SendString '\x1bf',
+      key = "RightArrow",
+      mods = "OPT",
+      action = wezterm.action.SendString "\x1bf",
     },
-  }
+    {
+      key = "v",
+      mods = "LEADER",
+      action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
+    },
+    {
+      key = "s",
+      mods = "LEADER",
+      action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" },
+    },
+    {
+        -- I like to use vim direction keybindings, but feel free to replace
+        -- with directional arrows instead.
+        key = "j", -- or DownArrow
+        mods = "LEADER",
+        action = wezterm.action.ActivatePaneDirection("Down"),
+      },
+      {
+        key = "k", -- or UpArrow
+        mods = "LEADER",
+        action = wezterm.action.ActivatePaneDirection("Up"),
+      },
+      {
+        key = "h", -- or LeftArrow
+        mods = "LEADER",
+        action = wezterm.action.ActivatePaneDirection("Left"),
+      },
+      {
+        key = "l", -- or RightArrow
+        mods = "LEADER",
+        action = wezterm.action.ActivatePaneDirection("Right"),
+      },    
+  },
+  leader = {
+      key = "w", mods = "CTRL", timeout_milliseconds = 1000 
+    }
 }
 return config

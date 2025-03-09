@@ -58,19 +58,17 @@ ctrl-alt-cmd-1 = 'workspace 1.home'
 ctrl-alt-cmd-2 = 'workspace 2.web'
 ctrl-alt-cmd-3 = 'workspace 3.reader'
 ctrl-alt-cmd-4 = 'workspace 4.email'
-ctrl-alt-cmd-5 = 'workspace 5.code'
-ctrl-alt-cmd-6 = 'workspace 6.work'
-ctrl-alt-cmd-7 = 'workspace 7.music'
-ctrl-alt-cmd-8 = 'workspace 8.chat'
+ctrl-alt-cmd-6 = 'workspace 5.work'
+ctrl-alt-cmd-7 = 'workspace 6.music'
+ctrl-alt-cmd-8 = 'workspace 7.chat'
 
 ctrl-alt-cmd-shift-1 = 'move-node-to-workspace 1.home'
 ctrl-alt-cmd-shift-2 = 'move-node-to-workspace 2.web'
 ctrl-alt-cmd-shift-3 = 'move-node-to-workspace 3.reader'
 ctrl-alt-cmd-shift-4 = 'move-node-to-workspace 4.email'
-ctrl-alt-cmd-shift-5 = 'move-node-to-workspace 5.code'
-ctrl-alt-cmd-shift-6 = 'move-node-to-workspace 6.work'
-ctrl-alt-cmd-shift-7 = 'move-node-to-workspace 7.music'
-ctrl-alt-cmd-shift-8 = 'move-node-to-workspace 8.chat'
+ctrl-alt-cmd-shift-5 = 'move-node-to-workspace 5.work'
+ctrl-alt-cmd-shift-6 = 'move-node-to-workspace 6.music'
+ctrl-alt-cmd-shift-7 = 'move-node-to-workspace 7.chat'
 
 ctrl-alt-cmd-m = 'fullscreen'
 
@@ -104,17 +102,13 @@ if.app-id = 'com.hey.app.desktop'
 run = 'move-node-to-workspace 4.email'
 
 [[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace 5.code'
-
-[[on-window-detected]]
 if.app-id = 'com.amazon.workspaces'
-run = 'move-node-to-workspace 6.work'
+run = 'move-node-to-workspace 5.work'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace 7.music'
+run = 'move-node-to-workspace 6.music'
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
-run = 'move-node-to-workspace 8.chat'
+run = 'move-node-to-workspace 7.chat'

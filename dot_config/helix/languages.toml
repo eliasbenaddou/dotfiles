@@ -45,11 +45,14 @@ auto-format = true
 formatter = { command = "prettier", args = ["--parser", "json"] }
 
 [[language]]
+language-servers = ["marksman", "mpls"]
 name = "markdown"
-# https://github.com/executablebooks/mdformat
-formatter = { command = "mdformat", args = ["-"] }
 soft-wrap.enable = true
 auto-format = true
+
+[language-server.mpls]
+command = "mpls"
+args = ["--no-auto", "--dark-mode", "--enable-emoji", "--enable-wikilinks", "--full-sync"]
 
 [[language]]
 name = "yaml"
@@ -59,5 +62,4 @@ formatter = { command = "prettier", args = ["--parser", "yaml"] }
 [[language]]
 name = "toml"
 auto-format = true
-# https://github.com/bd82/toml-tools/tree/master/packages/prettier-plugin-toml
 formatter = { command = "prettier", args = ["--parser", "toml"] }

@@ -65,6 +65,12 @@ esc = ["collapse_selection", "keep_primary_selection"]
 # Saving
 C-s = ["normal_mode", ":w"]
 
+[keys.normal.space]
+# Open HTML preview of markdown content in a browser
+# Once the following gets merged, a custom label could be used
+# https://github.com/helix-editor/helix/pull/3958
+o = ":lsp-workspace-command open-preview"
+
 [keys.select]
 # Selection Navigation
 X = "select_line_above"

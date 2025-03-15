@@ -45,7 +45,7 @@ auto-format = true
 formatter = { command = "prettier", args = ["--parser", "json"] }
 
 [[language]]
-language-servers = ["marksman", "mpls"]
+language-servers = ["marksman", "mpls", "iwe"]
 name = "markdown"
 soft-wrap.enable = true
 auto-format = true
@@ -53,6 +53,9 @@ auto-format = true
 [language-server.mpls]
 command = "mpls"
 args = ["--no-auto", "--dark-mode", "--enable-emoji", "--enable-wikilinks", "--full-sync"]
+
+[language-server.iwe]
+command = "iwes"
 
 [[language]]
 name = "yaml"

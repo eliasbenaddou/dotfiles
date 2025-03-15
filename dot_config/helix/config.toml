@@ -37,8 +37,8 @@ display-inlay-hints = true
 
 [keys.normal]
 # Navigation
-"J" = "@15zj" # Scroll down
-"K" = "@15zk" # Scroll up
+C-J = "@15zj" # Scroll down
+C-K = "@15zk" # Scroll up
 C-d = ["half_page_down", "goto_window_center"]
 C-u = ["half_page_up", "goto_window_center"]
 ret = "goto_word"

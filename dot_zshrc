@@ -24,3 +24,6 @@
 
 # 9. Zoxide
 [ -f "$HOME/.config/zsh/zoxide.zsh" ] && source "$HOME/.config/zsh/zoxide.zsh"
+
+# 10. Helix Keybindings
+[ -f "$HOME/.config/zsh/zsh-helix-mode.plugin.zsh" ] && source "$HOME/.config/zsh/zsh-helix-mode.plugin.zsh"

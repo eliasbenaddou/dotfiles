@@ -86,3 +86,5 @@ C-s = ["normal_mode", ":w"]
 [keys.insert]
 # Saving
 C-s = ["normal_mode", ":w"]
+# Esc replacement
+j = { k = "normal_mode" }

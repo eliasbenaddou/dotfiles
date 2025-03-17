@@ -1,6 +1,7 @@
 # Themes
 export STARSHIP_THEME="tokyo_night_storm"
 export WEZTERM_THEME="tokyo_night_storm"
+export BAT_THEME="tokyo_night_storm"
 
 # Locale settings
 export LANG="en_GB.UTF-8" # Sets default locale for all categories

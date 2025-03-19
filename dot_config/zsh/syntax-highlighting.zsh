@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 
 if command -v brew &>/dev/null; then
-  source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  source "$HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 # Disable underlining, etc.

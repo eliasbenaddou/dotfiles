@@ -14,7 +14,7 @@
 [ -f "$HOME/.config/zsh/prompt.zsh" ] && source "$HOME/.config/zsh/prompt.zsh"
 
 # 6. fzf
-[ -f "$HOME/.config/zsh/fzf.zsh" ] && source "$HOME/.config/zsh/fzf.zsh"
+[ -f "$HOME/.config/zsh/.fzf.zsh" ] && source "$HOME/.config/zsh/.fzf.zsh"
 
 # 7. History
 [ -f "$HOME/.config/zsh/history.zsh" ] && source "$HOME/.config/zsh/history.zsh"
@@ -27,3 +27,6 @@
 
 # 10. Helix Keybindings
 [ -f "$HOME/.config/zsh/zsh-helix-mode.plugin.zsh" ] && source "$HOME/.config/zsh/zsh-helix-mode.plugin.zsh"
+
+# 11. Pyenv
+[ -f "$HOME/.config/pyenv/pyenv.zsh" ] && source "$HOME/.config/pyenv/pyenv.zsh"

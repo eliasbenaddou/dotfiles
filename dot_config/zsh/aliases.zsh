@@ -111,3 +111,8 @@ alias l="eza --all --icons=always"
 
 # --- Lazygit Integration ---
 alias lg="lazygit"
+
+# --- AWS ADFS Profiles ---
+alias aws-nonprod='aws-adfs login --no-ssl-verification --profile nonprod --adfs-host sts.lseg.com --role-arn arn:aws:iam::715817324460:role/lch-analytic-nonprod-fulladmin-adfs-role --region eu-west-2'
+alias aws-qa='aws-adfs login --no-ssl-verification --profile qa --adfs-host sts.lseg.com --role-arn arn:aws:iam::006310287178:role/lch-analytic-qa-fulladmin-adfs-role --region eu-west-2'
+alias aws-uat='aws-adfs login --no-ssl-verification --profile uat --adfs-host sts.lseg.com --role-arn arn:aws:iam::097282227750:role/lch-analytic-uat-fulladmin-adfs-role --region eu-west-2'

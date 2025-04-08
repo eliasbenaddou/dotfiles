@@ -3,7 +3,7 @@ name = "python"
 language-id = "python"
 roots = ["pyproject.toml", "poetry.lock", ".git", ".venv/"]
 language-servers = ["ruff", "basedpyright"]
-formatter = { command = "uvx", args = ["ruff", "check", "--fix", "-"] }
+formatter = { command = "sh", args = ["-c", "uvx ruff check --fix - | uvx ruff format -"] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]

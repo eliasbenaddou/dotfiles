@@ -3,7 +3,10 @@ name = "python"
 language-id = "python"
 roots = ["pyproject.toml", "poetry.lock", ".git", ".venv/"]
 language-servers = ["ruff", "basedpyright"]
-formatter = { command = "sh", args = ["-c", "uvx ruff check --fix - | uvx ruff format -"] }
+formatter = { command = "sh", args = [
+  "-c",
+  "uvx ruff check --fix - | uvx ruff format -",
+] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
@@ -21,39 +24,39 @@ fix = true
 
 [language-server.ruff.config.settings.lint]
 select = [
-    "E",     # pycodestyle errors
-    "W",     # pycodestyle warnings
-    "F",     # pyflakes
-    "B",     # flake8-bugbear
-    "I",     # isort
-    "RUF",   # ruff
-    "D",     # docstrings
-    "UP",    # pyupgrade
-    "ANN",   # annotations
-    "ASYNC", # async checks
-    "S",     # bandit (security)
-    "YTT",   # datetime checks
-    "A",     # builtins shadowing
-    "RET",   # return statements
-    "TCH",   # type-checking
-    "ARG",   # function args
-    "PTH",   # pathlib over os.path
-    "ERA",   # env assumptions
-    "LOG",   # logging practices
-    "N",     # naming
-    "C4",    # comprehensions
-    "T10",   # debugger usage
-    "SIM",   # simplify code
-    "TRY",   # try/except
-    "C90",   # complexity
-    "PGH",   # pattern hooks
+  "E",     # pycodestyle errors
+  "W",     # pycodestyle warnings
+  "F",     # pyflakes
+  "B",     # flake8-bugbear
+  "I",     # isort
+  "RUF",   # ruff
+  "D",     # docstrings
+  "UP",    # pyupgrade
+  "ANN",   # annotations
+  "ASYNC", # async checks
+  "S",     # bandit (security)
+  "YTT",   # datetime checks
+  "A",     # builtins shadowing
+  "RET",   # return statements
+  "TCH",   # type-checking
+  "ARG",   # function args
+  "PTH",   # pathlib over os.path
+  "ERA",   # env assumptions
+  "LOG",   # logging practices
+  "N",     # naming
+  "C4",    # comprehensions
+  "T10",   # debugger usage
+  "SIM",   # simplify code
+  "TRY",   # try/except
+  "C90",   # complexity
+  "PGH",   # pattern hooks
 ]
 ignore = [
-    "E501",  # line too long
-    "E731",  # do not assign lambda
-    "D205",  # docstrings blank line spacing
-    "D100",  # missing docstring in public module    
-    "D104",  # missing docstring in public package
+  "E501", # line too long
+  "E731", # do not assign lambda
+  "D205", # docstrings blank line spacing
+  "D100", # missing docstring in public module    
+  "D104", # missing docstring in public package
 ]
 
 [tool.ruff.lint.per-file-ignores]
@@ -101,4 +104,4 @@ formatter = { command = "prettier", args = ["--parser", "yaml"] }
 [[language]]
 name = "toml"
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "toml"] }
+formatter = { command = "taplo", args = ["fmt", "-"] }

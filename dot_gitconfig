@@ -31,7 +31,7 @@
 	directory = /Users/eliasbenaddouidrissi/Desktop
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 
 [diff]
     algorithm = histogram
@@ -45,6 +45,7 @@
 [delta]
     navigate = true
     side-by-side = true
+    dark = true
 
 [credential]
 	helper = /usr/local/share/gcm-core/git-credential-manager

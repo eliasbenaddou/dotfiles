@@ -38,17 +38,24 @@ display-inlay-hints = true
 
 [keys.normal]
 # Navigation
-C-J = "@15zj" # Scroll down
-C-K = "@15zk" # Scroll up
 C-d = ["half_page_down", "goto_window_center"]
 C-u = ["half_page_up", "goto_window_center"]
 ret = "goto_word"
+C-j = ['ensure_selections_forward', 'extend_to_line_bounds', 'extend_char_right', 'extend_char_left', 'delete_selection', 'add_newline_below', 'move_line_down', 'replace_with_yanked']
+C-k = ['ensure_selections_forward', 'extend_to_line_bounds', 'extend_char_right', 'extend_char_left', 'delete_selection', 'move_line_up', 'add_newline_above', 'move_line_up', 'replace_with_yanked']
 
 # Buffer & Window Management
 C-q = ":buffer-close!"
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw", ":reload-all"]
 tab = "buffer_picker"
-S-tab = "file_picker"
+# File explorer with yazi integration
+S-tab = [
+  ":sh rm -f /tmp/unique-file-h21a434",
+  ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434",
+  ":insert-output echo \"x1b[?1049h\" > /dev/tty",
+  ":open %sh{cat /tmp/unique-file-h21a434}",
+  ":redraw",
+]
 C-t = ":toggle file-picker.git-ignore"
 
 # Editing Commands
@@ -71,21 +78,6 @@ C-s = ["normal_mode", ":w"]
 # Once the following gets merged, a custom label could be used
 # https://github.com/helix-editor/helix/pull/3958
 o = ":lsp-workspace-command open-preview"
-# Replacing file explorer with yazi integration
-# e = [
-#   ":sh rm -f /tmp/unique-file-h21a434",
-#   ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434",
-#   ":insert-output echo \"x1b[?1049h\" > /dev/tty",
-#   ":open %sh{cat /tmp/unique-file-h21a434}",
-#   ":redraw",
-# ]
-# E = [
-#   ":sh rm -f /tmp/unique-file-u41ae14",
-#   ":insert-output yazi '%{workspace_directory}' --chooser-file=/tmp/unique-file-u41ae14",
-#   ":insert-output echo \"x1b[?1049h\" > /dev/tty",
-#   ":open %sh{cat /tmp/unique-file-u41ae14}",
-#   ":redraw",
-# ]
 
 [keys.select]
 # Selection Navigation
@@ -119,7 +111,9 @@ p = ":sh helix-wezterm.sh present %{buffer_name}"
 t = ":sh helix-wezterm.sh test %{buffer_name}"
 
 [keys.select.";"]
+# Could use mods here instead?
 a = [
     "yank_to_clipboard",
     ":sh helix-wezterm.sh ai %{buffer_name}"
 ]
+

@@ -39,6 +39,8 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply eliasbenaddou
 
 1. **[zsh-helix-mode](https://github.com/Multirious/zsh-helix-mode)** – Bring comfort of working with Helix keybindings to your Zsh environment. This plugin attempts to implement Helix keybindings as accurately and completely as possible while respecting existing shell workflows.## Theme
 
+i. \*\*[helix-weztern](https://github.com/quantonganh/helix-wezterm?tab=readme-ov-file) - Turning Helix into an IDE with the help of WezTerm and CLI tools.
+
 ## Theme
 
 All tools or configurations that have themes use the Tokyo Night Storm [pallette](https://github.com/tokyo-night/tokyo-night-vscode-theme).

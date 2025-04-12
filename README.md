@@ -1,9 +1,5 @@
 # Elias' dotfiles, managed by [chezmoi](https://github.com/twpayne/chezmoi)
 
-**insert screenshot here**
-
-## Contents
-
 - `brew` for most tools like chezmoi, lazygit, yazi, etc
 - `.config` for my configuration files for tools like aerospace, sketchybar, etc
 - `.git-config` for git configuration
@@ -37,9 +33,9 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply eliasbenaddou
 
 1. **[bat](https://github.com/sharkdp/bat)** – A better `cat` with syntax highlighting, Git integration, and line numbers.
 
-1. **[zsh-helix-mode](https://github.com/Multirious/zsh-helix-mode)** – Bring comfort of working with Helix keybindings to your Zsh environment. This plugin attempts to implement Helix keybindings as accurately and completely as possible while respecting existing shell workflows.## Theme
+1. **[zsh-helix-mode](https://github.com/Multirious/zsh-helix-mode)** – Implement Helix keybindings as accurately and completely as possible while respecting existing shell workflows.
 
-i. \*\*[helix-weztern](https://github.com/quantonganh/helix-wezterm?tab=readme-ov-file) - Turning Helix into an IDE with the help of WezTerm and CLI tools.
+1. **[helix-weztern](https://github.com/quantonganh/helix-wezterm?tab=readme-ov-file)** - Turning Helix into an IDE with the help of WezTerm and CLI tools.
 
 ## Theme
 

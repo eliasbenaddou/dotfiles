@@ -90,7 +90,7 @@ auto-format = true
 
 [language-server.mpls]
 command = "mpls"
-args = ["--no-auto", "--dark-mode", "--enable-emoji", "--enable-wikilinks", "--full-sync"]
+args = ["--no-auto", "--enable-emoji", "--enable-wikilinks", "--full-sync"]
 
 [language-server.iwe]
 command = "iwes"

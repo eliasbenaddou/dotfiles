@@ -87,6 +87,7 @@ language-servers = ["marksman", "mpls"]
 name = "markdown"
 soft-wrap.enable = true
 auto-format = true
+formatter = { command = "mdformat", args = ["-"] }
 
 [language-server.mpls]
 command = "mpls"

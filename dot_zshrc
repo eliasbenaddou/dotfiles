@@ -27,3 +27,6 @@
 
 # 10. Helix Keybindings
 [ -f "$HOME/.config/zsh/zsh-helix-mode.plugin.zsh" ] && source "$HOME/.config/zsh/zsh-helix-mode.plugin.zsh"
+
+# 11. Yazi
+[ -f "$HOME/.config/yazi/yazi-cwd.zsh" ] && source "$HOME/.config/yazi/yazi-cwd.zsh"

@@ -56,21 +56,23 @@ ctrl-alt-cmd-shift-f = 'move right'
 ctrl-alt-cmd-minus = 'resize smart -50'
 ctrl-alt-cmd-equal = 'resize smart +50'
 
-ctrl-alt-cmd-1 = 'workspace 1.home'
+ctrl-alt-cmd-1 = 'workspace 1.todo'
 ctrl-alt-cmd-2 = 'workspace 2.web'
 ctrl-alt-cmd-3 = 'workspace 3.reader'
 ctrl-alt-cmd-4 = 'workspace 4.email'
 ctrl-alt-cmd-5 = 'workspace 5.work'
 ctrl-alt-cmd-6 = 'workspace 6.music'
 ctrl-alt-cmd-7 = 'workspace 7.chat'
+ctrl-alt-cmd-8 = 'workspace 8.edit'
 
-ctrl-alt-cmd-shift-1 = 'move-node-to-workspace 1.home'
+ctrl-alt-cmd-shift-1 = 'move-node-to-workspace 1.todo'
 ctrl-alt-cmd-shift-2 = 'move-node-to-workspace 2.web'
 ctrl-alt-cmd-shift-3 = 'move-node-to-workspace 3.reader'
 ctrl-alt-cmd-shift-4 = 'move-node-to-workspace 4.email'
 ctrl-alt-cmd-shift-5 = 'move-node-to-workspace 5.work'
 ctrl-alt-cmd-shift-6 = 'move-node-to-workspace 6.music'
 ctrl-alt-cmd-shift-7 = 'move-node-to-workspace 7.chat'
+ctrl-alt-cmd-shift-8 = 'move-node-to-workspace 8.edit'
 
 ctrl-alt-cmd-m = 'fullscreen'
 
@@ -96,7 +98,7 @@ ctrl-alt-cmd-f = ['join-with right', 'mode main']
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace 1.home'
+run = 'move-node-to-workspace 1.todo'
 
 [[on-window-detected]]
 if.app-id = 'io.readwise.read'

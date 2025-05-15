@@ -45,6 +45,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.default_cwd = "/Users/eliasbenaddouidrissi/second-brain"
 config.default_cursor_style = "SteadyBar"
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"

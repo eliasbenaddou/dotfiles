@@ -2,7 +2,7 @@
 alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
 alias suspend='sudo pm-suspend'
-alias sleep='pmset sleepnow'
+alias sleepnow='pmset sleepnow'
 alias c='clear'
 alias e='exit'
 
@@ -111,3 +111,18 @@ alias l="eza --all --icons=always"
 
 # --- Lazygit Integration ---
 alias lg="lazygit"
+
+# --- Eject the Elias 4TB SSD (Photos daemons hold it even with Photos closed) ---
+ejectssd() {
+  local vol="/Volumes/Elias 4TB SSD"
+  [ -d "$vol" ] || { echo "SSD not mounted"; return 0; }
+  osascript -e 'tell application "Photos" to quit' 2>/dev/null
+  killall photolibraryd managedcorespotlightd 2>/dev/null
+  /bin/sleep 2
+  if diskutil unmount "$vol"; then
+    echo "Safe to unplug."
+  else
+    echo "Still busy. Processes holding it:"
+    lsof 2>/dev/null | grep -F "$vol" | awk '{print $1, $2}' | sort | uniq -c | sort -rn
+  fi
+}

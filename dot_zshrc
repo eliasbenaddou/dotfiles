@@ -24,3 +24,9 @@
 
 # 9. Zoxide
 [ -f "$HOME/.config/zsh/zoxide.zsh" ] && source "$HOME/.config/zsh/zoxide.zsh"
+# bun completions
+[ -s "/Users/eliasbenaddouidrissi/.bun/_bun" ] && source "/Users/eliasbenaddouidrissi/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

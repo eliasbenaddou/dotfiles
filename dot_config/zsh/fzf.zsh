@@ -2,8 +2,8 @@
 # fzf Initialization & Advanced Configuration
 # ------------------------------------------------------------------------------
 
-# 1. fzf Initialization
-eval "$(fzf --zsh)"
+# 1. fzf Initialization (key bindings need a terminal; skip when there is none)
+[[ -t 0 ]] && eval "$(fzf --zsh)"
 
 # 2. fzf + fd Integration
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"

@@ -22,11 +22,10 @@
 # 8. Aliases
 [ -f "$HOME/.config/zsh/aliases.zsh" ] && source "$HOME/.config/zsh/aliases.zsh"
 
-# 9. Zoxide
-[ -f "$HOME/.config/zsh/zoxide.zsh" ] && source "$HOME/.config/zsh/zoxide.zsh"
-# bun completions
-[ -s "/Users/eliasbenaddouidrissi/.bun/_bun" ] && source "/Users/eliasbenaddouidrissi/.bun/_bun"
-
-# bun
+# 9. bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+
+# 10. Zoxide (keep last: zoxide expects to be initialised at the end of the file)
+[ -f "$HOME/.config/zsh/zoxide.zsh" ] && source "$HOME/.config/zsh/zoxide.zsh"

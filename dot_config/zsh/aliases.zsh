@@ -72,35 +72,6 @@ quick_commit() {
 alias gqc='quick_commit'
 alias gqcp='quick_commit push'
 
-# --- Helix Integration ---
-poetry_uv_run_hx() {
-  if command -v poetry >/dev/null 2>&1 && [ -f "poetry.lock" ]; then
-    poetry run hx "$@"
-  elif command -v uv >/dev/null 2>&1 && [ -f "uv.lock" ]; then
-    uv run hx "$@"
-  else
-    hx "$@"
-  fi
-}
-alias h='poetry_uv_run_hx'
-alias prp='poetry run python'
-
-# Helix Search with Immediate Filtering Fix
-hxs() {
-    RG_PREFIX="rg -i --files-with-matches"
-    local files
-    files="$(
-        FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
-            fzf --multi --print0 --sort \
-                --preview="[[ -n {} ]] && rg --pretty --ignore-case --context 5 {q} {}" \
-                --phony -i -q "$1" \
-                --bind "change:reload($RG_PREFIX {q})" \
-                --preview-window="70%:wrap" \
-                --bind 'ctrl-a:select-all'
-    )"
-    [[ "$files" ]] && hx --vsplit $(echo "$files" | tr \\0 " ")
-}
-
 # --- Folder Shortcuts ---
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
@@ -108,9 +79,6 @@ alias dow="$HOME/Downloads"
 # --- Better ls ---
 alias ls="eza --all --icons=always"
 alias l="eza --all --icons=always"
-
-# --- Lazygit Integration ---
-alias lg="lazygit"
 
 # --- Eject the Elias 4TB SSD (Photos daemons hold it even with Photos closed) ---
 ejectssd() {

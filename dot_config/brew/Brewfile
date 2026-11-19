@@ -1,75 +1,180 @@
-# Taps
+tap "abhimanyu003/sttr"
+tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "charmbracelet/tap"
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
+tap "filosottile/musl-cross"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
+tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
-tap "koekeishiya/formulae"
 tap "nikitabobko/tap"
-
-# Binaries
-brew "xz"
-brew "python@3.12"
-brew "asciinema"
+tap "oven-sh/bun", trusted: { formulae: ["bun"] }
+tap "quantonganh/tap"
+tap "tod-org/tod", "https://github.com/tod-org/homebrew-tod.git"
+# Core application library for C
 brew "glib"
+# Vector graphics library with cross-device output support
 brew "cairo"
+# Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Cut, copy, and paste anything, anywhere, all from the terminal
+brew "clipboard"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# C library implementing the SSH2 protocol
+brew "libssh2"
+# Modern, maintained replacement for ls
 brew "eza"
-brew "node"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Terminal JSON viewer
 brew "fx"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Render markdown on the CLI
+brew "glow"
+# Library to load and enumerate PKCS#11 modules
 brew "p11-kit"
+# Validating, recursive, caching DNS resolver
 brew "unbound"
+# GNU Transport Layer Security (TLS) Library
 brew "gnutls"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# GNU triangulated surface library
+brew "gts"
+# OpenType text shaping engine
 brew "harfbuzz"
+# Framework for layout and rendering of i18n text
 brew "pango"
+# Library to render SVG files using Cairo
 brew "librsvg"
+# Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
-brew "helix"
-brew "hugo"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# General purpose TCP-IP emulator
 brew "libslirp"
+# C library SSHv1/SSHv2 client and server protocols
 brew "libssh"
-brew "mas"
-brew "neovim"
-brew "pipx"
-brew "postgresql@14"
-brew "pyenv"
-brew "pyenv-virtualenv"
-brew "python@3.10"
-brew "python@3.9"
+# High-performance, extensible alternative to ls
+brew "lla"
+# Interactive cheatsheet tool for the command-line
+brew "navi"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Create, run, and share large language models (LLMs)
+brew "ollama", restart_service: :changed
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust toolchain installer
+brew "rustup"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
+# Terminal based presentation tool
+brew "slides"
+# Cross-shell prompt for astronauts
 brew "starship"
-brew "terraform"
-brew "terragrunt"
+# TOML toolkit written in Rust
+brew "taplo"
+# General purpose fuzzy finder TUI
+brew "television"
+# Terraform Language Server
+brew "terraform-ls"
+# Text interface for Git repositories
+brew "tig"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Internet file retriever
+brew "wget"
+# Port of OpenAI's Whisper model in C/C++
+brew "whisper.cpp"
+# CSV CLI magician written in Rust
+brew "xan"
+# Additional extensions to the XCB library
+brew "xcb-util"
+# Access X11 clipboards from the command-line
 brew "xclip"
+# Language Server for Yaml Files
+brew "yaml-language-server"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# General-purpose lossless data-compression library
+brew "zlib"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-brew "charmbracelet/tap/freeze"
-brew "jesseduffield/lazygit/lazygit"
-
-# Apps
-cask "caffeine"
-cask "aerospace"
+# Video editing and image design platform
+cask "capcut"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+cask "command-x"
+# Universal database tool and SQL client
 cask "dbeaver-community"
 cask "font-hack-nerd-font"
 cask "font-inconsolata"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
+cask "font-sf-mono"
+cask "font-sf-pro"
+cask "font-symbols-only-nerd-font"
+# Cross-platform Git credential storage for multiple hosting providers
 cask "git-credential-manager"
+# Web browser
+cask "google-chrome"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# App to write, plan, collaborate, and get organised
+cask "notion"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Tool that provides consistent, highly configurable symbols for apps
+cask "sf-symbols"
+# Tool to render realistic skies in real time on the screen
+cask "stellarium"
+# Search and click text anywhere on screen
+cask "superkey"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
-
-# Mac Apple Store
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Lightshot Screenshot", id: 526298438
-mas "Microsoft Outlook", id: 985367838
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "rcmd", id: 1596283165
-mas "TextShot", id: 6444068061
-mas "Todoist", id: 585829637
-mas "‎WhatsApp", id: 310633997
+go "github.com/awslabs/diagram-as-code/cmd/awsdac"
+go "github.com/jackyzha0/hugo-obsidian"
+go "github.com/mhersson/mpls"
+uv "basedpyright"
+uv "mdformat", with: ["mdformat-frontmatter"]
+uv "rendercv"
+uv "ruff"
+npm "hexo-cli"
